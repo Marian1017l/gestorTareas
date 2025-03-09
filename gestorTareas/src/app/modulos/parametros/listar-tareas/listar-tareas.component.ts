@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-listar-tareas',
-  imports: [],
+  standalone: false,
   templateUrl: './listar-tareas.component.html',
   styleUrl: './listar-tareas.component.css'
 })

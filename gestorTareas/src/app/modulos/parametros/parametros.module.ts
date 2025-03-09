@@ -2,13 +2,24 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ParametrosRoutingModule } from './parametros-routing.module';
+import { CrearTareasComponent } from './crear-tareas/crear-tareas.component';
+import { ListarTareasComponent } from './listar-tareas/listar-tareas.component';
+import { EliminarTareasComponent } from './eliminar-tareas/eliminar-tareas.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    CrearTareasComponent,
+    ListarTareasComponent,
+    EliminarTareasComponent
+  ],
   imports: [
+    ParametrosRoutingModule,
     CommonModule,
-    ParametrosRoutingModule
+    ParametrosRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class ParametrosModule { }

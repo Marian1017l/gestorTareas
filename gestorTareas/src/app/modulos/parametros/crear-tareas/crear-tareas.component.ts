@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-crear-tareas',
-  imports: [],
+  standalone: false,
   templateUrl: './crear-tareas.component.html',
-  styleUrl: './crear-tareas.component.css'
+  styleUrls: ['./crear-tareas.component.css']
 })
 export class CrearTareasComponent {
 
