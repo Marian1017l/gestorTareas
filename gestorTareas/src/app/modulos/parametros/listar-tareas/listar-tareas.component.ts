@@ -13,6 +13,7 @@ export class ListarTareasComponent {
   tareas:TareaModel[]=[];
   tareasMarcadas: TareaModel[] = [];
   tareasNoMarcadas: TareaModel[] = [];
+  //tareasEliminadas: TareaModel[] = [];
 
   constructor(
     private parametrosService: ParametrosService,
@@ -31,7 +32,6 @@ export class ListarTareasComponent {
         console.log('Tareas obtenidas:', this.tareas);
         console.log('Tareas marcadas:', this.tareasMarcadas);
         console.log('Tareas no marcadas:', this.tareasNoMarcadas);
-        
       },
       error: (error) => {
         console.error('Error al obtener las tareas', error);
@@ -42,6 +42,7 @@ export class ListarTareasComponent {
   separarTareas(): void {
     this.tareasMarcadas = this.tareas.filter(tarea => tarea.do_mark);
     this.tareasNoMarcadas = this.tareas.filter(tarea => !tarea.do_mark);
+    //this.tareasEliminadas = this.tareas.filter(tarea => tarea.hidden);
   }
 
   marcarComoHecha(tarea: TareaModel): void {
@@ -53,6 +54,22 @@ export class ListarTareasComponent {
         },
         error: (error) => {
           console.error('Error al actualizar la tarea', error);
+        }
+      });
+    } else {
+      console.error('Error: La tarea no tiene un ID válido');
+    }
+  }
+
+  marcarComoEliminada(tarea: TareaModel): void {
+    if (tarea.id !== undefined) {
+      this.parametrosService.actualizarTarea(tarea.id, { hidden: true }).subscribe({
+        next: (tareaActualizada: TareaModel) => {
+          console.log('Tarea marcada como eliminada:', tareaActualizada);
+          this.obtenerListaTareas();
+        },
+        error: (error) => {
+          console.error('Error al marcar la tarea como eliminada', error);
         }
       });
     } else {
