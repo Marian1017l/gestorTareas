@@ -22,10 +22,8 @@ export class ParametrosService {
     
   }
 
-  crearTarea(tarea:TareaNuevaModel): Observable<TareaNuevaModel> {
-    const response = this.http.post<TareaNuevaModel>(`${this.urlBase}task`, tarea);
-    console.log(response);
-    return response; 
+  crearTarea(tarea: TareaNuevaModel): Observable<TareaNuevaModel> {
+    return this.http.post<TareaNuevaModel>(`${this.urlBase}task`, tarea);
   }
   
   eliminarTarea(id:number): Observable<any> {

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TareaModel } from '../../../modelos/tarea.model';
 import { ParametrosService } from '../../../servicios/parametros.service';
-import { HttpClientModule, HttpHandler } from '@angular/common/http';
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-listar-tareas',
@@ -15,7 +15,8 @@ export class ListarTareasComponent {
   tareasNoMarcadas: TareaModel[] = [];
 
   constructor(
-    private parametrosService: ParametrosService
+    private parametrosService: ParametrosService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -57,5 +58,9 @@ export class ListarTareasComponent {
     } else {
       console.error('Error: La tarea no tiene un ID válido');
     }
+  }
+
+  redirigirACrearTarea(){
+    this.router.navigate(['parametros/crear-tarea']);
   }
 }

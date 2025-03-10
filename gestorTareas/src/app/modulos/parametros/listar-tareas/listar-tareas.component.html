@@ -6,7 +6,7 @@
         <!-- Columna de Proposed -->
         <div class="card shadow p-3 bg-light-blue h-100" style="background-color: #E8F9FF;">
           <h4 class="text-center" style="color: #001A6E;">Proposed</h4>
-          <button class="btn btn-primary btn-sm d-block mx-auto mb-3">New item</button>
+          <button (click)="redirigirACrearTarea()" class="btn btn-primary btn-sm d-block mx-auto mb-3">New item</button>
 
           <!-- Tareas pendientes -->
           <div *ngFor="let tarea of tareasNoMarcadas" class="task-card mx-3 my-2 p-3 text-start" style="background-color: #bbdefb; border-radius: 8px; min-height: 100px;">

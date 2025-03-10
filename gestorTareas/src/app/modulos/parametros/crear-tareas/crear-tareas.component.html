@@ -1,1 +1,23 @@
-<p>crear-tareas works!</p>
+<div class="bg-light vh-100 d-flex justify-content-center align-items-center">
+    <div class="text-center p-4 rounded shadow-lg" style="max-width: 500px; width: 100%; background: #f1f1f1; font-family: 'Poppins', sans-serif;">
+        <h3 class="mb-3" style="color: #001A6E; font-weight: bold;">New Item</h3>
+        <form [formGroup]="fGroup">
+            <div class="mb-3 text-start">
+                <label for="name" class="form-label fw-bold">Name</label>
+                <input formControlName="titleTask" type="text" class="form-control" id="name" name="name" required style="padding: 10px; border-radius: 5px;">
+            </div>
+            <div class="mb-3 text-start">
+                <label for="description" class="form-label fw-bold">Description</label>
+                <textarea formControlName="description" class="form-control" id="description" name="description" rows="4" required style="padding: 10px; border-radius: 5px;"></textarea>
+            </div>
+            <div class="d-flex justify-content-between">
+                <button (click)="regresar()" type="reset" class="btn btn-light w-45" style="border: 1px solid #ccc; font-weight: 500; padding: 10px;">
+                    Cancel
+                </button>
+                <button (click)="crearTarea()" type="submit" class="btn text-white w-45" style="background-color: #001A6E; border: none; padding: 10px; font-weight: 500;">
+                    Continue
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
