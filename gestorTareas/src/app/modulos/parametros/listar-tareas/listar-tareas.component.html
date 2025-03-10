@@ -1,1 +1,41 @@
-<p>listar-tareas works!</p>
+<div class="container mt-5">
+    <h2 class="text-center mb-4" style="color: #001A6E;">To-do list</h2>
+  
+    <div class="row">
+      <div class="col-md-6 d-flex flex-column">
+        <!-- Columna de Proposed -->
+        <div class="card shadow p-3 bg-light-blue h-100" style="background-color: #E8F9FF;">
+          <h4 class="text-center" style="color: #001A6E;">Proposed</h4>
+          <button class="btn btn-primary btn-sm d-block mx-auto mb-3">New item</button>
+
+          <!-- Tareas pendientes -->
+          <div class="task-card mx-3 my-2 p-3 text-start" style="background-color: #bbdefb; border-radius: 8px; min-height: 100px;">
+            <h5>NAME</h5>
+            <p>DECP</p>
+            <p>Status</p>
+            <div class="d-flex justify-content-between">
+              <button class="btn btn-success btn-sm" style="background-color: #001A6E;">Done</button>
+              <button class="btn btn-danger btn-sm">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 d-flex flex-column">
+        <!-- Columna de Done -->
+        <div class="card shadow p-3 bg-light-blue h-100" style="background-color: #E8F9FF;">
+          <h4 class="text-center" style="color: #001A6E;">Done</h4>
+          <button class="btn btn-sm d-block mx-auto mb-3" style="background-color: transparent; border: none; color: inherit;color: #E8F9FF;">.</button>
+          <!-- Tareas terminadas -->
+          <div class="task-card mx-3 my-2 p-3 text-start" style="background-color: #bbdefb; border-radius: 8px; min-height: 100px;">
+            <h5>NAME</h5>
+            <p>DECP</p>
+            <p>Status</p>
+            <div class="d-flex justify-content-end">
+              <button class="btn btn-danger btn-sm">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
