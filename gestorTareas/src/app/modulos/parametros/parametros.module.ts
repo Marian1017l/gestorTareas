@@ -6,6 +6,7 @@ import { CrearTareasComponent } from './crear-tareas/crear-tareas.component';
 import { ListarTareasComponent } from './listar-tareas/listar-tareas.component';
 import { EliminarTareasComponent } from './eliminar-tareas/eliminar-tareas.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
