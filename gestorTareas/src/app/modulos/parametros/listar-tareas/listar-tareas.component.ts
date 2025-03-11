@@ -61,6 +61,22 @@ export class ListarTareasComponent {
     }
   }
 
+  marcarComoDesHecha(tarea: TareaModel): void {
+    if (tarea.id !== undefined) {
+      this.parametrosService.actualizarTarea(tarea.id, { do_mark: false }).subscribe({
+        next: (tareaActualizada: TareaModel) => {
+          console.log('Tarea actualizada:', tareaActualizada);
+          this.obtenerListaTareas();
+        },
+        error: (error) => {
+          console.error('Error al actualizar la tarea', error);
+        }
+      });
+    } else {
+      console.error('Error: La tarea no tiene un ID válido');
+    }
+  }
+
   marcarComoEliminada(tarea: TareaModel): void {
     if (tarea.id !== undefined) {
       this.parametrosService.actualizarTarea(tarea.id, { hidden: true }).subscribe({
